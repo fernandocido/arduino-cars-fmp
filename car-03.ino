@@ -5,10 +5,14 @@ void setup() {
   pinMode(12, OUTPUT);
   pinMode(11, OUTPUT);
   pinMode(10, OUTPUT);
+  pinMode(PIN_LEFT, OUTPUT);
+  pinMode(PIN_RIGHT, OUTPUT);
   Serial.begin(9600);
 }
 
 void loop() {
+  digitalWrite(PIN_LEFT, HIGH);   // turn on
+  digitalWrite(PIN_RIGHT, HIGH);   // turn on
   if (Serial.available()) {
     t = Serial.read();
     Serial.println(t);
